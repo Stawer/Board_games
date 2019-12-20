@@ -2,9 +2,7 @@
 // {type:class}
 [Game | name:string author:Author type:string price:number language:string age:number players:number] 
 [Author | name:string]
-[Type | name:string]
 
 //Asociations
 
 [Author]->[Game]
-[Game]->[Type]
