@@ -2,6 +2,7 @@
 // {type:class}
 [Game | name:string author_id:number type_id:string price:number language_id:number age:number number_of_players:number] 
 [Author | name:string]
+<<<<<<< HEAD
 [Language | name:string initials:string]
 [Type | name:string]
 [Inventory | game_id:number quantity:number]
@@ -16,3 +17,9 @@
 [Inventory]->[Game]
 [Game]->[Language]
 [Game]->[Type]
+=======
+
+//Asociations
+
+[Author]->[Game]
+>>>>>>> 1cf3e808d6a80cd4ad2fff61b83f5e407ed74aa5
