@@ -2,12 +2,22 @@ const router = require('express').Router();
 const Author = require('../models/Author')
 const { service } = require('../services/AuthorService')
 
-router.get('/', async (request, response) => {
+//READ
+router.get('/all', async (request, response) => {
     response
         .status(200)
         .send(service.getAll());
 });
 
+//READ
+router.get('/:id', async (request, response) => {
+    const id = request.params.id
+    response
+        .status(200)
+        .send(service.getOneUsingId(id));
+});
+
+//CREATE
 router.post('/', async (request, response) => {
     const data = request.body
     try {
@@ -24,10 +34,9 @@ router.post('/', async (request, response) => {
                 error: error.message
             })
     }
-    
-    
 });
 
+//UPDATE
 router.patch('/', async (request, response) => {
     const data = request.body
     try {
@@ -46,6 +55,7 @@ router.patch('/', async (request, response) => {
     }
 });
 
+//DELETE
 router.delete('/:id', async (request, response) => {
     const id = request.params.id
     try {
@@ -63,5 +73,11 @@ router.delete('/:id', async (request, response) => {
             })
     }
 });
+
+//GET, POST, PATCH, DELETE, PUT
+//GET ?
+//POST -> 
+//PATCH => 
+//DELETE X
 
 module.exports = router;

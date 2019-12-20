@@ -6,4 +6,4 @@ class Type extends Entity {
     }
 }
 
-exports.module = Type
+module.exports = Type

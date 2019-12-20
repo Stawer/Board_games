@@ -6,4 +6,4 @@ class Language extends Entity {
     }
 }
 
-exports.module = Language
+module.exports = Language

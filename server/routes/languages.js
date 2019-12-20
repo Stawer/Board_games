@@ -31,7 +31,7 @@ router.post('/', async (request, response) => {
 router.patch('/', async (request, response) => {
     const data = request.body
     try {
-        service.updateOne(data)
+        service.updateOne(new Language(data))
         response
             .status(200)
             .send({

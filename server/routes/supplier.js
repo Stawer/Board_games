@@ -1,17 +1,19 @@
 const router = require('express').Router();
-const Game = require('../models/Game')
-const { service } = require('../services/GameService')
+const Supplier = require('../models/Supplier')
+const { service } = require('../services/SupplierService')
 
+//Read
 router.get('/', async (request, response) => {
     response
         .status(200)
         .send(service.getAll());
 });
 
+//Create
 router.post('/', async (request, response) => {
     const data = request.body
     try {
-        service.insertOne(new Game(data))
+        service.insertOne(new Supplier(data))
         response
             .status(200)
             .send({
@@ -28,10 +30,11 @@ router.post('/', async (request, response) => {
     
 });
 
+//Update
 router.patch('/', async (request, response) => {
     const data = request.body
     try {
-        service.updateOne(new Game(data))
+        service.updateOne(new Supplier(data))
         response
             .status(200)
             .send({
@@ -46,6 +49,7 @@ router.patch('/', async (request, response) => {
     }
 });
 
+//Delete
 router.delete('/:id', async (request, response) => {
     const id = request.params.id
     try {
