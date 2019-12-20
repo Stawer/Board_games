@@ -5,7 +5,6 @@ const { service: gameService } = require('../services/GameService')
 
 router.get('/', async (request, response) => {
     const inventoryList = inventoryService.getAll().map(item => {
-        console.log(item)
         return {
             ...item,
             game: gameService.getOneUsingId(item.game_id)
