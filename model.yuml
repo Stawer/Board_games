@@ -11,8 +11,8 @@
 //Asociations
 
 [Author]->[Game]
-[Store]->[Supplier]
 [Supplier]->[Inventory]
-[Inventory]->[Game]
-[Game]->[Language]
-[Game]->[Type]
+[Inventory]->[Store]
+[Game]->[Inventory]
+[Language]->[Game]
+[Type]->[Game]
