@@ -13,18 +13,16 @@ class Service extends Array {
     }
 
     getOneUsingId(id) {
-        return this.find(element => element.id === id)
+        return this.find(element => element.id === Number(id))
+    }
+
+    getRandom() {
+        const random = Math.floor(Math.random() * (this.length ));
+        return this[random]
     }
 
     insertOne(data) {
         data.id = this.next()
-
-        const found = this.find(element => element.id === data.id)
-
-        if(found) {
-            throw new Error('id exist')
-        }
-
         this.push(data)
     }
 

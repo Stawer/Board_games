@@ -1,9 +1,9 @@
 const Service = require('./Service')
 
-class TypesService extends Service {
+class TypeService extends Service {
     
 }
 
 module.exports = {
-    service: new TypesService()
+    service: new TypeService()
 }

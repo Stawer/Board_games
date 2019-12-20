@@ -1,14 +1,22 @@
 const express = require('express')
 const app = express()
 const port = 3000
+
+require('./services/LanguageMock')
+require('./services/AuthorMock')
+require('./services/TypeMock')
+require('./services/GameMock')
+require('./services/InventoryMock')
+
 //parsea las rerquest json
 app.use(express.json())
 
 //permite modularizar y asignar rutas particulares
-app.use('/games', require('./routes/games'))
 app.use('/authors', require('./routes/authors.js'))
-app.use('/types', require('./routes/types'))
-app.use('/languages', require('./routes/languages'))
+app.use('/games', require('./routes/games.js'))
+app.use('/types', require('./routes/types.js'))
+app.use('/languages', require('./routes/languages.js'))
+app.use('/inventory', require('./routes/inventory.js'))
 
 app.listen(port, () => {
     console.log('listening on port', port)
